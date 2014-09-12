@@ -1,0 +1,6 @@
+<h1>My Teams</h1>
+<% @teams.each do |team| %>
+ <p><%= team.name %></p> 
+<% end %>
+<p><%= link_to "Create Team", new_team_path %></p>
+<p><%= link_to  "Sign Out", destroy_user_session_path, method: :delete %></p>
