@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
 
   def create 
       @team = Team.find(params[:team_id])
-      @player = @team.players.new(params.require(:player).permit(:first_name, :last_name, :number))
+      @player = @team.players.new(params.require(:player).permit(:first_name, :last_name, :number, :position))
     if @player.save 
       redirect_to @team
     else 

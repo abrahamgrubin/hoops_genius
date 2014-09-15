@@ -7,7 +7,7 @@
   <p><%= f.label :number %></p>
   <p><%= f.text_field :number %></p> 
   <p><%= f.label :position %></p>
-  <p><%= f.select :position, (['Point Gaurd', 'Shooting Gaurd', 'Small Forward', 'Power Forward', 'Center']) %></p>
+  <p><%= f.select :position, options_for_select([['Point Gaurd'], ['Shooting Gaurd'], ['Small Forward'], ['Power Forward'], ['Center']]) %></p>
   <p><%= f.submit %></p> 
 
   <% end %>
