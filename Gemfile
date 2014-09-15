@@ -46,7 +46,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development do
+  gem 'rails-erd'
   gem 'rails_apps_testing'
+  gem 'quiet_assets'
+  gem 'pry-rails'
 end
 group :development, :test do
   gem 'rspec-rails'
