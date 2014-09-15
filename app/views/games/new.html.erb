@@ -1,0 +1,13 @@
+<h3>New game</h3>
+
+<%= form_for [@team, @game] do |f| %>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.label :date_of_game %>
+    <%= f.date_select :date_of_game, order: [:month, :day, :year] %>
+  </div>
+  <%= f.submit %>
+<% end %>
