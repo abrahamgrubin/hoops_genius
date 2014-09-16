@@ -1,0 +1,21 @@
+<h3>New game</h3>
+
+<%= form_for @game do |f| %>
+  <div>
+    <%= f.label :home_team_id %>
+    <%= f.select :home_team_id, Team.all.map { |t| [t.name, t.id]} %>
+  </div>
+  <div>
+    <%= f.label :away_team_id %>
+    <%= f.select :away_team_id, Team.all.map { |t| [t.name, t.id]} %>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div>
+    <%= f.label :date_of_game %>
+    <%= f.date_select :date_of_game, order: [:month, :day, :year] %>
+  </div>
+  <%= f.submit %>
+<% end %>

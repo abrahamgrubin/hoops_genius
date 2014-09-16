@@ -2,7 +2,11 @@
 
 FactoryGirl.define do
   factory :game do
-    team1 "MyString"
-    team2 "MyString"
+
+    team nil
+    player nil
+    location "MyString"
+    date_of_game "2014-09-15 10:24:55"
+    
   end
 end
