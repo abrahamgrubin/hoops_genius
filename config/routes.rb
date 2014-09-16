@@ -4,9 +4,9 @@ HoopsGenius::Application.routes.draw do
 
   resources :teams do 
     resources :players
+    resources :games
   end
 
-  resources :games
   
   authenticated :user do 
     root 'teams#index', as: 'authenticated_root'

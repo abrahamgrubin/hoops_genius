@@ -1,10 +1,6 @@
-<h3>New game</h3>
+<h3>New game for <%= @team.name %></h3>
 
-<%= form_for @game do |f| %>
-  <div>
-    <%= f.label :home_team_id %>
-    <%= f.select :home_team_id, Team.all.map { |t| [t.name, t.id]} %>
-  </div>
+<%= form_for [@team, @game] do |f| %>
   <div>
     <%= f.label :away_team_id %>
     <%= f.select :away_team_id, Team.all.map { |t| [t.name, t.id]} %>
