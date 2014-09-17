@@ -4,6 +4,7 @@ HoopsGenius::Application.routes.draw do
 
   resources :teams do 
     resources :players
+    resources :games
   end
 
   resources :games
