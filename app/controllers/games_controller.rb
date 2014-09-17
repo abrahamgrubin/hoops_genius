@@ -5,11 +5,11 @@ class GamesController < ApplicationController
   end
   
   def create
-     @team = Team.find(params[:team_id])
-     @game = @team.home_games.build(game_params)
+    
+     @game = Game.new(game_params)
      #@alphabetical = Team.all.order(:name)
     if @game.save 
-    	redirect_to [@team, @game], notice: 'Game created'
+    	redirect_to @game, notice: 'Game created'
     else 
       flash[:error] = "There was an error creating the game! Please try again"
       render :new
@@ -17,14 +17,13 @@ class GamesController < ApplicationController
   end
 
   def show 
-    @team = Team.find(params[:team_id])
-    @game = @team.home_games.find(params[:id])
+    @game = Game.find(params[:id])
   end 
 
-  private 
+  private
 
-  def game_params 
-    params.require(:game).permit(:home_team_id, :away_team_id, :location, :date_of_game, :game_id)
+  def game_params
+    params.require(:game).permit(:home_team_id, :away_team_id, :location, :date_of_game)
   end
-
+  
 end
